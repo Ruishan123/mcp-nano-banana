@@ -44,6 +44,8 @@ Then register the installed command:
 command = "mcp-nano-banana"
 startup_timeout_sec = 20
 tool_timeout_sec = 120
+arg= []
+env={ GEMINI_API_KEY = "your_api_key_here"}
 ```
 
 Replace `https://github.com/<owner>/<repo>.git` with the actual public repository URL for this project.
