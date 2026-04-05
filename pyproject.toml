@@ -1,0 +1,49 @@
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mcp-nano-banana"
+version = "0.1.0"
+description = "Portable local MCP server for Gemini image generation, editing, and blending."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+keywords = [
+    "codex",
+    "gemini",
+    "image-editing",
+    "image-generation",
+    "mcp",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Multimedia :: Graphics",
+]
+dependencies = [
+    "google-genai>=1.26,<2",
+    "mcp[cli]>=1.10,<2",
+    "Pillow>=10,<12",
+    "python-dotenv>=1.0,<2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "build>=1.2,<2",
+    "pytest>=8.0,<9",
+]
+
+[project.scripts]
+mcp-nano-banana = "mcp_nano_banana.server:main"
+
+[tool.pytest.ini_options]
+addopts = "-p no:cacheprovider"
+pythonpath = ["."]
